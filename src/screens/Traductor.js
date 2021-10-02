@@ -1,14 +1,24 @@
 
 import React from "react";
-import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View, Text, StyleSheet, TextInput, Clipboard, } from "react-native";
+
+
+import { ImageBackground, Image, TouchableOpacity, TouchableHighlight, View,
+   Text, StyleSheet, TextInput, Clipboard,KeyboardAvoidingView,ActivityIndicator,
+    FlatList, AsyncStorage } from "react-native";
+
+    import ListPalabras from '../services/ListPalabras'
 import RNPickerSelect from 'react-native-picker-select';
 
 const Traductor = ({ navigation }) => {
 
+
+
   return (
     < View style={styles.container}>
-      <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
+        <ListPalabras/>
+      {/* <ImageBackground source={require('../img/plantilla.png')} style={styles.image}>
         <View style={styles.viewPickerSelect}>
+        <ListPalabras/>
           <RNPickerSelect
             placeholder={{
               label: 'Seleccione un lenguaje',
@@ -88,9 +98,13 @@ const Traductor = ({ navigation }) => {
           >    
             <Image source={require('../img/explorar.png')} />
           </TouchableHighlight>
+
+         
         </View>
 
-      </ImageBackground>
+
+
+      </ImageBackground> */}
     </View>
   );
 }

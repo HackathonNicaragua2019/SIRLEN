@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-//import {  KeyboardAvoidingView } from "react-native";
+import {  KeyboardAvoidingView,ActivityIndicator, FlatList, AsyncStorage } from "react-native";
 
 import Login from './src/screens/Login'
 import Traductor from './src/screens/Traductor'
@@ -11,29 +11,16 @@ import Historia from './src/screens/Historia'
 import Musica from './src/screens/Musica'
 import Turismo from './src/screens/Turismo'
 import Registrar from './src/screens/Registrar'
+// import {listPalabras} from '../services'
 
 const Stack = createStackNavigator();
 
 export default function App() {
 
-
-  componentDidMount= () => {
-    fetch('https://pokeapi.co/api/v2/{endpoint}/', {
-      method: 'GET'
-    })
-    .then((response) => response.json())
-    .then((responseJson) => {
-      console.log(responseJson);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-
-  }
-
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      
         <Stack.Screen name="Login" component={Login}
           options={{ headerShown: false }} />
         <Stack.Screen name="Traductor" component={Traductor}
@@ -51,6 +38,7 @@ export default function App() {
         <Stack.Screen name="Registrar" component={Registrar}
           options={{ headerShown: false }} />
       </Stack.Navigator>
+   
     </NavigationContainer>
   );
 }
